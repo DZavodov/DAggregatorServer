@@ -1,0 +1,16 @@
+# DAgregatorServer
+/Configs/*APIKey.json
+/Configs/*APIKeys.json
+/Log*.txt
+/Configs/UserLoggers.json
+
+# DZavodov
+/Reference/
+
+# Python
+__pycache__
+
+# VisualStudio
+.vs/
+/*.sln
+/*.pyproj.user

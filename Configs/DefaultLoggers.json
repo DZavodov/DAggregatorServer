@@ -1,0 +1,79 @@
+{
+	"version": 1,
+	"formatters": {
+		"Console": { "format": "%(levelname)s %(filename)s:%(funcName)s(..):%(lineno)d %(message)s" },
+		"ConsoleWarning": { "format": "%(levelname)s %(funcName)s(..) %(message)s [%(pathname)s:%(lineno)d]" },
+		"File": { "format": "%(levelname)s %(asctime)s %(filename)s:%(funcName)s(..):%(lineno)d %(message)s" },
+		"FileWarning": { "format": "%(levelname)s %(asctime)s %(funcName)s(..) %(message)s [%(pathname)s:%(lineno)d]" }
+	},
+	"filters": {
+		"BelowWarning": {
+			"()": "__main__.makeFilterLess",
+			"level": "WARNING"
+		}
+	},
+	"handlers": {
+		"Console": {
+			"class": "logging.StreamHandler",
+			"level": "DEBUG",
+			"formatter": "Console",
+			"stream": "ext://sys.stdout",
+			"filters": [ "BelowWarning" ]
+		},
+		"ConsoleWarning": {
+			"class": "logging.StreamHandler",
+			"level": "WARNING",
+			"formatter": "ConsoleWarning",
+			"stream": "ext://sys.stderr"
+		},
+		"File": {
+			"class": "logging.handlers.RotatingFileHandler",
+			"level": "INFO",
+			"formatter": "File",
+			"filename": "Log.txt",
+			"maxBytes": 10485760,
+			"backupCount": 20,
+			"encoding": "utf8",
+			"filters": [ "BelowWarning" ]
+		},
+		"FileWarning": {
+			"class": "logging.handlers.RotatingFileHandler",
+			"level": "WARNING",
+			"formatter": "FileWarning",
+			"filename": "Log.txt",
+			"maxBytes": 10485760,
+			"backupCount": 20,
+			"encoding": "utf8"
+		}
+	},
+	"root": {
+		"level": "INFO",
+		"handlers": [ "Console", "ConsoleWarning", "File", "FileWarning" ]
+	},
+	"loggers": {
+		"__main__": {
+			"level": "INFO",
+			"propagate": "no"
+		},
+		"DAggregatorServer": {
+			"level": "INFO",
+			"propagate": "no"
+		},
+		"Databases.FirebaseAdapter": {
+			"level": "INFO",
+			"propagate": "no"
+		},
+		"Utils": {
+			"level": "INFO",
+			"propagate": "no"
+		},
+		"Resources.SteamResource": {
+			"level": "INFO",
+			"propagate": "no"
+		},
+		"Resources.EpicGamesResource": {
+			"level": "INFO",
+			"propagate": "no"
+		}
+	}
+}
