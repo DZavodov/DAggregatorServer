@@ -12,7 +12,7 @@
     <Name>DAggregatorServer</Name>
     <RootNamespace>DAggregatorServer</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>-l=ru -r EpicGames --productsOffset=0 --productsMax=100 --updatePricesTimeLock=0</CommandLineArguments>
+    <CommandLineArguments>-l=ru -r Megafon --productsOffset=0 --productsMax=100 --updatePricesTimeLock=43200</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -28,6 +28,7 @@
     <Compile Include="Source\DAggregatorServer.py" />
     <Compile Include="Source\Databases\DatabaseInterface.py" />
     <Compile Include="Source\Databases\FirebaseAdapter.py" />
+    <Compile Include="Source\Resources\MegafonResource.py" />
     <Compile Include="Source\Utils.py" />
     <Compile Include="Source\Resources\ResourceInterface.py" />
     <Compile Include="Source\Resources\EpicGamesResource.py" />

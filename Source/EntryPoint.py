@@ -10,6 +10,7 @@ from firebase_admin import credentials
 from firebase_admin import db
 from Resources.SteamResource import Steam
 from Resources.EpicGamesResource import EpicGames
+from Resources.MegafonResource import Megafon
 from Databases.FirebaseAdapter import FirebaseAdapter
 from DAggregatorServer import DAgregatorServer
 
@@ -48,7 +49,7 @@ if __name__ == "__main__":
 	with open("Configs/ResourcesAPIKeys.json") as APIKeysFile:
 		APIKeys = json.load(APIKeysFile)
 
-	resources = [Steam, EpicGames]
+	resources = [Steam, EpicGames, Megafon]
 	if arguments.resourceNames != None:
 		argumentResources = []
 		for resource in resources:

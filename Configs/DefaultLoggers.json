@@ -74,6 +74,10 @@
 		"Resources.EpicGamesResource": {
 			"level": "INFO",
 			"propagate": "no"
+		},
+		"Resources.MegafonResource": {
+			"level": "INFO",
+			"propagate": "no"
 		}
 	}
 }
